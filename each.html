@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>test1</p>
+    <p>test2</p>
+    <p>test3</p>
+    <p>test4</p>
+    <p>test5</p>
+    <div id="out"></div>
+    <button id="btn">btn</button>
+    <script>
+        let btn=document.getElementById("btn");
+        let para=document.querySelectorAll("p");
+        let out=document.getElementById("out");
+        let x=0;
+        // window.addEventListener('load',()=>{console.log("hi")});
+        btn.addEventListener("click",()=>{
+            let i=0;
+           
+            let a=setInterval(function f1(){
+                para[i].style.color="red";
+                i++;   
+                return i;             
+            },1000);
+            console.log(a);
+            let time=para.length*1000
+            setTimeout(function(){clearInterval(a)},time)
+            
+          
+            console.log(para.length);
+            // if(i=para.length){                
+            //     // clearInterval("a")
+            //   }else{console.log(a)}
+
+              
+           
+           
+           
+      
+        })
+    </script>
+</body>
+</html>

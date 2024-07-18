@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyup</title>
+    <style>
+        .out{width: 500px; height: auto; padding: 5px; border: 1px solid #000}
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="input" class="in">
+    <textarea name="" id="output" class="out"></textarea>
+    <script>
+        let input=document.querySelector("#input")
+        let output=document.querySelector("#output")
+        window.addEventListener("load", ()=>{
+            input.addEventListener("keyup", ()=>{
+                // event.preventDefault();
+                input.value=input.value.toLocaleUpperCase();
+                let val=input.value;
+                output.value=val;
+                // output.value.toUpperCase();
+            })
+        })
+    </script>
+    
+</body>
+</html>

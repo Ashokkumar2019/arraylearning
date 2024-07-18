@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        .container{width: 90%; margin: auto; position: relative;}
+        .boxarea{display: flex; justify-content: space-between; align-items: center;}
+        .box{width: 300px;height: 300px;border: 1px solid #000;}
+        .img{position: absolute;top: 1px;width: 298px; left: 2px}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="boxarea">
+                <div class="box"></div>
+                <div>
+                    <button onclick="start()">start</button>
+                    <button onclick="stopInterval()">stop</button>
+                </div>
+                <div class="box"></div> 
+            </div>
+            <img class="img" id="img1" src="img/1.jpg" alt="1">
+            <img class="img" id="img2" src="img/2.jpg" alt="2">
+            <img class="img" id="img3" src="img/3.jpg" alt="3">
+            <img class="img" id="img4" src="img/4.jpg" alt="4">
+            <img class="img" id="img5" src="img/5.jpg" alt="5">
+        </div>
+        <script>
+        let count=1;
+       
+        let startInterval;  //use srartInterval variable for globle use
+        function start(){
+             startInterval= setInterval(slide, 1000);
+     
+        }
+        function slide(){
+        if(count>5){
+        for(i=5;i>0;i--){
+        let imgNo=document.getElementById("img"+i);
+        imgNo.style.left="0.5%";
+        }
+        count=1;
+        
+        } else{
+        let imgNo=document.getElementById("img"+count);
+        imgNo.style.left="73.3%";
+        count++
+        }
+        
+        }
+        function stopInterval(){
+            
+            clearInterval(startInterval);
+            startInterval=null;
+            
+        }
+
+        </script>
+    </body>
+</html>

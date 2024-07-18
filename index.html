@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>test1</p>
+    <p>test2</p>
+    <p>test3</p>
+    <p>test4</p>
+    <button id="btn">btn</button>
+    <script>
+        let para=document.querySelectorAll("p");
+        let btn=document.getElementById("btn");
+        
+        // console.log(typeof(para))
+        let arr=[];
+        arr.push(para);
+        arr.forEach((e,i)=>{
+            
+            if(i<2){
+                e.style.color="red"
+                console.log(i)
+            }else{console.log("2 se jayda")}
+
+        })
+        
+     //  btn.addEventListener("click", ()=>{
+     //     para.forEach((e,i)=>{
+     //        if
+     //        e.style.color="red"
+         
+     //    // setInterval(f1,2000)
+     //    // function f1(){
+     //    //    console.log("hi") 
+     //    // }
+     //  });
+     // });
+            
+           
+        
+
+       
+       
+        
+    </script>
+</body>
+</html>

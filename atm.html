@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+			.container{width: 80%; margin: auto;padding: 0px;text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<table id="myTable" width="600px" align="center">
+				<tr>
+			<td id="btnm1"></td>
+			<td id="btnm2"></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="btnm3"></td>
+			<td id="btnm4"></td>
+		</tr>
+			</table>
+			<table  width="600px" align="center">
+				<tr>
+					<td id="sbbtn"></td>
+				</tr>
+			</table>
+
+			<!-- <button onclick="btnShow()">btnShow</button> -->
+		</div>
+		<script>
+		document.write("<pre>")
+			let dep;
+			let withd;
+			let pass;
+			let balc;
+			let account=["ashok","rakesh","ashwani",]
+			let balam=10000;
+			let nbal;
+			let tacc;
+			let pin=1234;
+
+
+			function btncreate(){
+			let btn1=document.createElement('button');
+			btn1.textContent='Deposit Amount';
+			document.getElementById("btnm1").appendChild(btn1);
+			btn1.addEventListener('click', cashd);
+
+			let btn2=document.createElement('button');
+			btn2.textContent='Cash Withdrawal';
+			document.getElementById("btnm2").appendChild(btn2);
+			btn2.addEventListener('click', cashw);
+
+			let btn3=document.createElement('button');
+			btn3.textContent='Password Change';
+			document.getElementById("btnm3").appendChild(btn3);
+			btn3.addEventListener('click', password);
+
+			let btn4=document.createElement('button');
+			btn4.textContent='Balance Check';
+			document.getElementById("btnm4").appendChild(btn4);
+			btn4.addEventListener('click', bal);
+		}
+		
+			btncreate();
+
+			function sbtbtn(){
+				let sbtn=document.createElement('button');
+			 sbtn.textContent='Back to main menu';
+			document.getElementById("sbbtn").appendChild(sbtn);
+			 sbtn.addEventListener('click', btncreate);
+			}
+
+			
+
+			 
+			// btnShow();
+			// ------------------------------------deposit amount--------------------------
+			function cashd() {
+			let nacc;
+			
+			          let acc=prompt("enter your name");
+			         
+			        
+			          for(i=0;i<account.length;i++){
+				          if(acc==account[i]){
+				          tacc=1;
+				          break;
+				          } else{
+				          tacc=0;
+				          }
+				          }
+				          if(tacc==1){
+				          let damount=parseInt(prompt(acc," Please enter the amount for diposite."));
+				           let toam=balam+damount;
+				           document.write("<br>",acc," your total amount is ", toam);
+				          
+				          } else{
+				          nacc=acc;
+				          account.push(nacc);
+				          let namout=parseInt(prompt("your are my new account holder so please enter your Amount for diposite"));
+				          document.write("Hi ",nacc,", \nyour total amount is ", namout);
+				          document.write("<br>  now total account holder are",account);
+
+				          }
+				          sbtbtn();          
+
+				          
+				          }
+				          // -----------------------------------------------------------deposit end------------------------
+				          // -----------------------------------------------------------withdraw------------------------
+				          function cashw(){
+				          let acc
+				          acc=prompt("enter the Name");
+				         pass=parseInt(prompt("enter the pin"));
+				          for(i=0;i<account.length;i++){
+					          if(acc==account[i]){
+					          tacc=1;
+					          break;
+					         } else{
+					          tacc=0;
+					          } 
+					          }
+					           if(tacc==1 && pass==pin){
+					          let damount=parseInt(prompt(acc," Please enter the amount for Withdraw."));
+					          if(damount<=balam){
+					          let toam=balam-damount;
+					           document.write("<br>",acc," your Balance amount is ", toam);
+					          } else{
+					          document.write("you have insufficient balance")
+					          }
+					            
+					          } else if(tacc==1 && pass!=pin){
+					          document.write("Please enter Correct pin")
+					          } else{
+					          document.write("you have not any account here")
+					          }
+					          sbtbtn();
+					       
+					          }
+					          // -----------------------------------------------withdraw END-----------------------------------
+					          // -----------------------------------------------pin change-----------------------------------
+					          function password(){
+					          acc=prompt("enter the Name");
+					         pass=parseInt(prompt("enter the pin"));
+					          for(i=0;i<account.length;i++){
+						          if(acc==account[i]){
+						          tacc=1;
+						          break;
+						         } else{
+						          tacc=0;
+						          } 
+						          }
+						          if(tacc==1 && pass==pin){
+						          let npin=parseInt(prompt(acc," Enter new pin"));
+						          
+						          pass=npin
+						          document.write("your pin code has been changed successfully ",pass)
+						            
+						          } else if(tacc==1 && pass!=pin){
+						          document.write("Please enter Correct pin")
+						          } else{
+						          document.write("you have not any account here")
+						          }
+						          sbtbtn();
+						       
+						          }
+						           // -----------------------------------------------pin change end-----------------------------------
+						           // -----------------------------------------------bal check-----------------------------------
+						           function bal(){
+						          acc=prompt("enter the Name");
+						         pass=parseInt(prompt("enter the pin"));
+						          for(i=0;i<account.length;i++){
+							          if(acc==account[i]){
+							          tacc=1;
+							          break;
+							         } else{
+							          tacc=0;
+							          } 
+							          }
+							          if(tacc==1 && pass==pin){
+							          document.write("your amount is ",balam)
+							            
+							          } else if(tacc==1 && pass!=pin){
+							          document.write("Please enter Correct pin")
+							          } else{
+							          document.write("you have not any account here")
+							          }
+							          sbtbtn();
+							       
+							          }
+
+							          // -------------------------------------------bal end---------------------------------
+							//           function btnShow() {
+							//   // document.getElementById("btn1").innerHTML="<button onclick="cashd()">Cash Deposit</button>";
+							//   // document.getElementById("btn2").innerHTML="<button onclick="cashw()">Cash Withdraw</button>";
+							//   // document.getElementById("btn2").innerHTML="<button onclick="password()">Password Change</button>";
+							//   // document.getElementById("btn3").innerHTML="<button onclick="bal()">Balance Check</button>";
+							//   document.getElementById("btn1").innerHTML="<button onclick="cashd()">Cash Deposit</button>";
+							//   document.getElementById("btn2").innerHTML="<button onclick="cashw()">Cash Withdraw</button>";
+							//   document.getElementById("btn2").innerHTML="<button onclick="password()">Password Change</button>";
+							//   document.getElementById("btn3").innerHTML="<button onclick="bal()">Balance Check</button>";
+							//   // var row = table.insertRow(0);
+							//   // var cell1 = row.insertCell(0);
+							//   // var cell2 = row.insertCell(1);
+							//   // cell1.innerHTML = "NEW CELL1";
+							//   // cell2.innerHTML = "NEW CELL2";
+							// }
+							
+							</script>
+						</body>
+					</html>

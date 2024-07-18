@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<script>
+
+	document.write("<pre>")
+	let a=[54,65,34,36,39,43,58,100,3454,443,547,345,2467,565778,533333];
+	
+	let x;
+			
+
+	for(i=0;i<=a.length-1;i++){
+
+		for(j=i+1;j<a.length+1;j++){
+
+			if(a[i]<a[j]){
+				
+			x=j
+			let temp=a[i];
+			a[i]=a[j];
+			a[j]=temp;
+		} else{
+			x=i;
+
+		}
+		}
+		
+		
+		// document.write("\n");
+		document.write(a[x],", ");
+		
+	}
+
+
+	
+
+
+
+
+		// let a=parseInt(prompt("enter the value 1st"))
+		// let b=parseInt(prompt("enter the value 2nd"))
+
+		// if(a>b){
+		// 	document.write("Bigger integer of both no is ",a,b,"<br>")
+		// 	document.write("Small integer of both no is ",b,a)
+		// } else if(b>a){
+		// 	document.write("Bigger integer of both no is ",b,a,"<br>")
+		// 	document.write("Small integer of both no is ",a,b)
+		// } else{
+		// 	document.write("integer of both no is ",a,b)
+		// }
+
+</script>
+
+
+ <script>
+                document.write("<pre>")
+                    let num=[35,34,0,1,34,2,3,6,44,66,56,76,45,23]
+                    let x;
+                    for(i=0;i<=num.length-1;i++){
+                        for(j=i+1;j<=num.length+1;j++){
+                            let temp;
+                            let prn=num[i];
+                            let nxt=num[j];
+                            if(prn>nxt){
+                                x=j;
+                                temp=num[j];
+                                num[j]=num[i];
+                                num[i]=temp;
+                            }else{x=i;}
+
+                        } document.write(num[x],", ")
+                    }
+                   
+                    
+            </script>
+</body>
+</html>

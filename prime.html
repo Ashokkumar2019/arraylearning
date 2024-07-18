@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+       <script>
+           // let snum=parseInt(prompt("enter small number"));
+            document.write("<pre>")
+           let x;
+           let lnum=parseInt(prompt("enter max number"));
+           document.write("below are prime no \n")
+           for(let i=0;i<=lnum;i++){
+            x=0;
+           for(let j=2;j<i;j++){
+            if(i%j==0){
+                x=1;
+               
+            }
+           } 
+           if(i>1 && x==0){
+            document.write(i,", ")
+        }
+           }
+           document.write("\n")
+           document.write("\n")
+           document.write("below are Non prime no \n")
+           for(let k=0;k<=lnum;k++){
+            let p=1;
+           for(let l=2;l<k;l++){
+            if(k%l==0){
+                p=0;
+               break;
+            }
+           } 
+           if(k>1 && p==0){
+            document.write(k,", ")
+        }
+           }
+       </script>
+        </body>
+    </html>
