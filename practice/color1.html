@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color change</title>
+    <style>
+        .container{
+            width: 90%;
+            max-width: 1000px;
+                  }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <button id="btn"> click here</button>
+    <h1 class="heading">heading1</h1>
+    <h1 class="heading">heading2</h1>
+    <h1 class="heading">heading3</h1>
+    <h1 class="heading">heading4</h1>
+    </div>
+    <script>
+        let btn= document.querySelector("#btn");
+        let heading= document.querySelectorAll(".heading");
+    //    let i=0;
+        btn.addEventListener("click",() => {
+            console.log(heading)
+            for(i=0;i<heading.length;i++){
+                heading[i].innerHTML="change text all heading";
+        heading[i].style.color="green";
+            }
+        // 
+    } );
+     
+    </script>
+</body>
+</html>

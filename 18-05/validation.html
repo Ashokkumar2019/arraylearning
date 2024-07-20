@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+        width:90% auto;
+        max-width: 400px;
+        display: grid;
+        justify-content: center;    
+        align-items: center;
+    }
+    </style>
+    
+  </head>
+  <body>
+    <div class="container">
+        <form action="">
+            <label for="">Username : </label><input type="text" onfocusout="vaildin()" name="" id="userN"><br><p id="error1">Please enter 5 digit Username</p> <br><br>
+            <label for="">Password : </label><input type="password" name="" id="pass"> <br><br>
+            <input type="submit" value="login">
+        </form>
+    </div>
+    <script>
+        let usename=document.getElementById("userN");
+        let password=document.getElementById("pass");
+        let error1=document.getElementById("error1");
+        function vaildin(){
+            if(usename.value.length<5){
+                error1.innerHTML="Please enter minimum 5 digit Username";
+                error1.style.color="red";
+                usename.style.border = "1px solid #ff0000";
+                usename.value = "";
+                usename.focus();
+                return false;
+            } else{
+                error1.innerHTML="Username is valid";
+                error1.style.color="green";
+                usename.style.borderColor = "green";                
+                return true;
+            }
+        };
+
+    </script>
+  
+  </body>
+  </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <form action="A.php" onsubmit="return validation()">
+        enter name<input type="text" name="nm" id="nm">
+        <span></span>
+        <br>
+        enter password<input type="password" name="pwd" id="pwd">
+        <span></span>
+        <br>
+        <input type="submit" value="save" id="btn">
+    </form>
+    <script>
+        function validation(e){
+            
+            
+            console.log('submit button is pressed');
+            regexpname=/^[a-zA-Z]{3,}$/;
+            regexpwd=/^\w{3}$/;
+let name=document.querySelector('#nm').value;
+if(!name.match(regexpname)){
+document.querySelector('span').innerText="please fill character minimum 3 "
+return false;
+}
+
+
+        }
+//         document.querySelector('form').addEventListener('submit',function(e){
+//             e.preventDefault();
+// // alert("clicked");
+//              console.log('submit button is pressed');
+//         })
+    </script>
+</body>
+</html>

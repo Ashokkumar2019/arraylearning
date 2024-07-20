@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="ash" id="inVal" >
+    <p id="outp"></p>
+    <script>
+       
+    //    let= window.addEventListener('#inVal').value;
+        
+    //    
+    //     
+
+    window. addEventListener("load", function() { 
+        // alert("good morning")
+        let in1=document.querySelector("#inVal");
+        let out1=document.getElementById("outp");
+       console.log(in1.name)
+        in1.addEventListener("keyup", function(e){
+            console.log(e.keyCode)
+            let kc=e.keyCode;
+            if(kc==13){
+                out1.innerHTML=in1.value; 
+            }
+            // out1.innerHTML=in1.value;
+            // console.log("heel")
+        })
+    });
+    </script>
+</body>
+</html>

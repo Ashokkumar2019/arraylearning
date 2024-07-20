@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>odd-even</title>
+</head>
+<body>
+    <script>
+         let fnum=parseInt(prompt("enter array start number"));
+        let lnum=parseInt(prompt("enter array Last number"));
+        document.write("<pre>")
+            document.write("Odd \tEven \n")
+        if(fnum>lnum){
+            for(i=lnum;i<=fnum;i++){
+                
+            if(i%2!==0){
+                document.write(i)
+            }else{
+                document.write("\t",i,"\n") 
+            }
+        }
+           
+            
+       
+        
+        }else{
+            
+        for(i=fnum;i<=lnum;i++){
+            if(i%2!==0){
+                document.write(i)
+            }else{
+                
+                document.write("\t",i,"\n") 
+            }
+        }
+    }
+       
+    
+    </script>
+</body>
+</html>

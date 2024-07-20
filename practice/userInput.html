@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userInput</title>
+</head>     
+<body>
+    <script>
+         
+        window.addEventListener("load",()=>{
+            con();
+        });
+        function con(){
+            let empId=prompt("enter emp id");
+            let res=confirm("are you sure, it is your emp Id");
+            if(res===true){
+                alert("thank you for submition")
+            } else{
+                con();  
+            }
+        }
+    </script>
+</body>
+</html>

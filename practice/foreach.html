@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <button id="btn">btn</button>
+    <script>
+        document.querySelector("#btn").addEventListener("click",()=>{
+            let para=document.querySelectorAll("p")
+            // console.log(para)
+            for(const e of para){
+                setInterval(()=>{
+                    e.style.color="red";
+                },5000)
+                                  
+                
+            }
+
+
+            // how to run the after 1 second after 2 scecond after 3 second color change of text
+            
+
+        })
+        
+
+
+
+    </script>
+</body>
+</html>

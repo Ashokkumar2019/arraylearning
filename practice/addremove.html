@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addremove</title>
+    <style>
+        .container{width: 90% auto;max-width: 400px;align-self: center;align-items: center ;align-content: center;display: grid;}
+        button.rbtn {
+    border: 0;
+    background: no-repeat;
+    text-decoration: underline;
+    color: red;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <textarea name="" id="text"></textarea>
+        <button id="btn">Add list</button>
+        <ul id="list"></ul>
+        <script>
+            let text=document.getElementById("text");
+            let btn=document.getElementById("btn");
+            let ulist=document.getElementById("list");
+            let data=[];
+            let rbtn;
+            
+            btn.addEventListener("click",()=>{
+            data.push(text.value);
+            let list=document.createElement("li");
+            rbtn=document.createElement("button");
+            let count=0;
+            for(i=count;i<data.length;i++){
+               
+                rbtn.classList.add("rbtn");
+                rbtn.innerHTML="remove item"
+                list.innerHTML=data[i];
+                list.appendChild(rbtn)
+               ulist.appendChild(list);
+              
+               text.value=" "
+               count++;
+              
+
+            //    for remove item
+
+              
+            }
+          
+          
+            });
+            
+            rbtn.addEventListener("click",(e)=>{
+                console.log(data)
+            });
+            //  rbtn=document.getElementsByClassName("btn");
+            //   rbtn.addEventListener("click",(e)=>{
+            //        e.parentNode.removeChild(e);
+            //     //    pli.style.display="none";
+                // });
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    .addr_area
+</head>
+<body>
+<table id="paradd">
+    <tr>
+        <td>name</td>
+        <td>Ashok</td>
+    </tr>
+    <tr>
+        <td>Adress</td>
+        <td>
+            <textarea name="" id="f_add"></textarea>
+        </td>
+    </tr>
+   
+</table>
+<label for="same_add">If parament address is same : </label>
+<input type="checkbox" name="" id="same_add" onclick="change_add()">
+
+<div class="addr_area">
+ <textarea name="" id="s_add"></textarea>
+</div>
+
+<script>
+    function change_add(){
+        // console.log("working")
+        // var ck=document.getElementById("same_add").checked;
+        // console.log(ck)
+        if(ck==true){
+            var address= document.getElementById("f_add").value;
+            document.getElementById("s_add").value=address;
+        } else{
+            document.getElementById("s_add").value="";
+        }
+    
+    }
+</script>
+
+</body>
+</html>

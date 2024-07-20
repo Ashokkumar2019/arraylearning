@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.">
+    <title>Document</title>
+    <style>
+        div{width: 100px;height: 100px;border: 1px solid #000;}
+        /* .red{background-color: red;}
+        .green{background-color: green;}
+        .blue{background-color: blue;} */
+    </style>
+</head>
+<body>
+   <div></div>
+   <select name="" id="colorbg" onchange="colorch()">
+    <option value="red">red</option>
+    <option value="green">green</option>
+    <option value="blue">blue</option>
+   </select> 
+   <script>
+    function colorch(){
+        var colorchange=document.getElementById("colorbg").value;
+        console.log(colorchange);
+        document.getElementsByTagName("div")[0].style.background=colorchange;
+    }
+    
+   </script>
+</body>
+</html>

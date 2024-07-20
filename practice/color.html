@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color change</title>
+    <style>
+        .container{
+            width: 90%;
+            max-width: 1000px;
+                  }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <button id="btn"> click here</button>
+    <h1 class="heading">heading1</h1>
+    <h1 class="heading">heading2</h1>
+    <h1 class="heading">heading3</h1>
+    <h1 class="heading">heading4</h1>
+    </div>
+    <script>
+        let btn= document.querySelector("#btn");
+        let heading= document.getElementsByClassName("heading");
+       let i=0;
+        btn.addEventListener("click",() => {
+        if (i<heading.length) {
+            if(i==0){heading[i].innerHTML="1st heading text and Color changed";heading[i].style.color="green";console.log(i)}
+            else if(i==1){heading[i].innerHTML="2nd heading text and Color changed";heading[i].style.color="yellow";console.log(i)}
+            else if(i==2){heading[i].innerHTML="3rd heading text and Color changed";heading[i].style.color="blue";console.log(i)}
+            else{heading[i].innerHTML="4th heading text and Color changed";heading[i].style.color="red";console.log(i)}
+           i++;}else{btn.disabled=true}
+    } );
+     
+    </script>
+</body>
+</html>

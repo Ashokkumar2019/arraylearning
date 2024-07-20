@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nameID"> <span>enter name</span>
+    <input type="text" id="passID"> <span>enter password</span>
+    <script>
+            window. addEventListener("load", function() { 
+                let namein=document.getElementById("nameID");
+                let passin=document.getElementById("passID");
+                namein.addEventListener("focus", function(){
+                    namein.style.background="yellow";
+                })
+                namein.addEventListener("blur", function(){
+                    namein.style.background="black";
+                })
+            })
+
+
+    </script>
+</body>
+</html>

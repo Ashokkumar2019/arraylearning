@@ -3,48 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>password hide show</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        body{background-color: rgb(5, 5, 88);}
+        .passBox{width: 90%; max-width: 300px; border: 1px solid #000; border-radius: 5px; display: flex; justify-content: center; align-items: center;background-color: #fff; padding-right: 10px;}
+        .inpass{width: 100%; border: 0; outline: 0; padding: 15px 10px;} 
+        .icon{width: 40px; overflow : hidden; cursor: pointer;}
+        .shicon{
+            margin-left: -33px;
+        }
+        .boxarea{display: flex;justify-content: center;align-items: center; height: 90px;}
+        
+    </style>
 </head>
 <body>
-    <p>test1</p>
-    <p>test2</p>
-    <p>test3</p>
-    <p>test4</p>
-    <button id="btn">btn</button>
+    <div class="boxarea">
+    <div class="passBox">
+        <input type="password" name="" id="inPassid" class="inpass" placeholder="Enter the password">
+        <div class="icon" id="iconBox"><img src="img/show-h.jpg" class="shicon" id="imgicon" alt=""></div>
+        
+    </div>
+</div>
     <script>
-        let para=document.querySelectorAll("p");
-        let btn=document.getElementById("btn");
-        
-        // console.log(typeof(para))
-        let arr=[];
-        arr.push(para);
-        arr.forEach((e,i)=>{
-            
-            if(i<2){
-                e.style.color="red"
-                console.log(i)
-            }else{console.log("2 se jayda")}
-
+        let icon=document.querySelector("#iconBox");
+        let inType=document.getElementById("inPassid");
+        let imgIcon=document.getElementById("imgicon");
+        icon .addEventListener('click',function() {
+            //
+            if(inType.type==="password"){
+               
+                inType.type="text";
+                imgIcon.style.marginLeft="0";
+                
+            }else{ inType.type="password";
+                imgIcon.style.marginLeft="-33px";}
         })
-        
-     //  btn.addEventListener("click", ()=>{
-     //     para.forEach((e,i)=>{
-     //        if
-     //        e.style.color="red"
-         
-     //    // setInterval(f1,2000)
-     //    // function f1(){
-     //    //    console.log("hi") 
-     //    // }
-     //  });
-     // });
-            
-           
-        
-
-       
-       
-        
     </script>
 </body>
 </html>

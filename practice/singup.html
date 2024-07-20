@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sing up sing in</title>
+    <style>
+        *{padding: 0;margin: 0;}
+        h3{font-size: 22px; font-weight: 300;}
+        body{background: rgb(59, 59, 77);color: white;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+        .container{display: flex;justify-content: center;align-items: center;margin-top: 200px;}
+        .formbox{display: grid;width: 90%; max-width: 300px;justify-content: columns;align-items:center ;align-self:center ;gap:15px 0px}
+        .inputtype{border: none; padding: 10px 5px;}
+        .submit{background: blue; color: #fff; width: 100px;margin: auto;}
+        .formbox span{color: red;}
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    
+    <form action="a.aspx" class="formbox" >
+        <H3><span id="signin">SignIn </span><span id="signup"> SignUp</span></H3>
+        <input class="inputtype" type="text" name="" id="nm" onfocusout="nameVal()" placeholder="Enter your Name">
+        <span id="enm"></span>
+        <input class="inputtype" type="password" name="" id="pw" onfocusout="pwVal()" placeholder="Enter Password">
+        <span id="epw"></span>
+        <input class="inputtype" type="password" name="" id="spw" onfocusout="spwVal()" placeholder="Enter Same Password">
+        <span id="espw"></span>
+        <input class="inputtype" type="date" name="" id="dob" onfocusout="dobVal()" placeholder="Enter your DOB">
+        <span id="edob"></span>
+        <input class="inputtype" type="email" name="" id="email" onfocusout="emailVal()" placeholder="Enter Your Email Id">
+        <span id="eemail"></span>
+        <input class="inputtype" type="text" name="" id="mob" onfocusout="mobVal()" placeholder="Enter Your Mobile No">
+        <span id="emob"></span>
+        <p>Gender</p>
+        <div class="gender">
+            <label for="male">Male</label> <input type="radio" name="male" id="male">
+            <label for="female">Female</label> <input type="radio" name="female" id="female">
+            <span id="egender"></span>
+        </div>
+        <p>Hobby</p>
+        <textarea class="inputtype" name="" id="hob"></textarea>
+        <input type="submit" class="inputtype submit" value="submit" id="smt" >
+        
+    </form>
+</div>
+<script>
+    let nm=document.getElementById("nm").value;
+    let pw=document.getElementById("pw").value;
+    let spw=document.getElementById("spw").value;
+    let dob=document.getElementById("dob").value;
+    let email=document.getElementById("email").value;
+    let mob=document.getElementById("mob").value;
+    let enm=document.getElementById("enm");
+    let epw=document.getElementById("epw");
+    let espw=document.getElementById("espw");
+    let edob=document.getElementById("edob");
+    let eemail=document.getElementById("eemail");
+    let emob=document.getElementById("emob");
+    let span=document.querySelector("span");
+        function nameVal(e){
+            let regexpnm=/^[A-Za-z]+$/;
+            if(!nm.match(regexpnm)){
+            enm.innerHTML="Enter your name in alphabet"
+            document.getElementById("nm").style.border="3px solid red";
+            return false;
+             } else {
+            
+            enm.innerHTML="okay"
+            document.getElementById("nm").style.border="none";
+        }
+        }
+        function pwVal(e){
+            let regexppw=/^[A-Za-z]\w{7,14}$/;
+            if(!pw.match(regexppw)){
+            epw.innerHTML="Enter password use alphabet and number"
+            document.getElementById("pw").style.border="3px solid red";
+            return false;
+        } else {
+           
+            span.innerHTML=""
+            document.getElementById("pw").style.border="none";
+        }
+        }
+        function spwVal(e){
+            let regexpspw=/^[A-Za-z]\w{7,14}$/;
+            if(!spw.match(regexpspw)){
+            espw.innerHTML="Enter password use alphabet and number"
+            document.getElementById("spw").style.border="3px solid red";
+            return false;
+        } else {
+           
+            span.innerHTML=""
+            document.getElementById("spw").style.border="none";
+        }
+        }
+        function dobVal(e){
+            let regexpdob=/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+            if(!dob.match(regexpdob)){
+            edob.innerHTML="Enter valid date"
+            document.getElementById("dob").style.border="3px solid red";
+            return false;
+        } else {
+           
+            span.innerHTML=""
+            document.getElementById("dob").style.border="none";
+        }
+        }
+        function emailVal(e){
+            let regexpemail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(!email.match(regexpemail)){
+            eemail.innerHTML="Enter valid email address"
+            document.getElementById("email").style.border="3px solid red";
+            return false;
+        } else {
+           
+            span.innerHTML=""
+            document.getElementById("email").style.border="none";
+        }
+        }
+        function mobVal(e){
+            let regexpmob=/^\d{10}$/;
+             if(!mob.match(regexpmob)){
+            emob.innerHTML="Enter valid mobile no"
+            document.getElementById("mob").style.border="3px solid red";
+            return false;
+        } else {
+           
+            span.innerHTML=""
+            document.getElementById("mob").style.border="none";
+        }
+    }
+        
+
+    
+
+</script>
+</body>
+</html>

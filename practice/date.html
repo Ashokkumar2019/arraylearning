@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body >
+    <div><span id="time"></span><span id="date"></span></div>
+    <!-- <button onclick="">start</button><button onclick="stop()">Stop</button> -->
+    <script>
+        let span1=document.getElementById("time")
+        let span2=document.getElementById("date")
+        function start() {
+            const time= new Date();
+            span1.innerHTML=time.toLocaleTimeString()+" ";
+            span2.innerHTML=time.toLocaleDateString();
+        }
+        setInterval(start,1000);
+     
+// setInterval(myfunction, 1000);
+//     function myfunction() {
+//         let date=new Date();
+//         let datet = date.toLocaleTimeString();
+//                     let timeas=document.getElementById("time");
+//                     timeas.innerHTML=datet;
+//                     // console.log("hi")
+//     }
+//    setInterval(myTimer, 1000);
+
+// function myTimer() {
+//   const date = new Date();
+//   document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+// }
+
+           
+            
+
+        
+      
+    </script>
+</body>
+</html>
